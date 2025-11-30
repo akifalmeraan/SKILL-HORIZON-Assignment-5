@@ -40,5 +40,23 @@ Findings:- 1) The anti-clickjacking X-Frame-Options header is not present.
            2) The site uses TLS and the Strict-Transport-Security HTTP header is not defined.
            3) The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site                in a different fashion to the MIME type. 
            
+b) Fast vulnerability template scan using Nuclei
+Command:- nuclei -u http:/testfire.netn-as -o nuclei.txt -c 10
+
+Findings:- Found an outdated nuclei version: v3.4.10 (outdated)
+Found 1 templates with syntax error (use -validate flag for further examination)
+[apache-detect] http://testfire.net ["Apache-Coyote/1.1"]
+[waf-detect:apachegeneric]  http://testfire.net
+
+c)Owasp zap baseline scan
+Command:- zap-baseline.py -t http://testfire.net -r zap_baseline.html
+Findings:- 
+true GET http://testfire.net	            Seed
+true	GET	http://testfire.net/robots.txt	 Seed
+true	GET	http://testfire.net/sitemap.xml	Seed
+No vulnerabilities found
+
+
+
 
 
