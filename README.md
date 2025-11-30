@@ -31,4 +31,14 @@ Directory  STATUS        SIZE      REDIRECT
 
 
 
+Task 2) 
+
+a)Web Vulnerability scan using NIkto
+Command:- nikto -h https://testfire.net -output nikto.txt
+
+Findings:- 1) The anti-clickjacking X-Frame-Options header is not present.
+           2) The site uses TLS and the Strict-Transport-Security HTTP header is not defined.
+           3) The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site                in a different fashion to the MIME type. 
+           
+
 
